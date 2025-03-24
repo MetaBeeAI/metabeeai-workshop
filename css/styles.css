@@ -158,3 +158,15 @@ p {
         padding: 15px;
     }
 }
+
+/* Logo link styling */
+header > a {
+    display: inline-block;
+    text-decoration: none;
+    border: none;
+    outline: none;
+}
+
+header > a:hover {
+    opacity: 0.9;
+}
