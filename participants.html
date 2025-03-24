@@ -1,13 +1,97 @@
 <!DOCTYPE html>
-<html lang='en-GB'>
+<html lang="en-GB">
 <head>
-<title>Participants | MetaBeeAI Workshop</title>
-<link rel='stylesheet' href='css/styles.css'>
-<meta charset='UTF-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Participants | MetaBeeAI Workshop</title>
+    <link href="css/styles.css" rel="stylesheet">
+    <style>
+        .participants {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .participant {
+            width: 250px;
+            text-align: center;
+            padding: 10px;
+            border-radius: 8px;
+            background: #f5f5f5;
+        }
+        .participant img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        h3 {
+            color: #5a4a9f;
+            margin-bottom: 5px;
+        }
+        h4 {
+            margin-top: 0;
+            font-weight: normal;
+            font-style: italic;
+            color: #555;
+        }
+    </style>
 </head>
 <body>
-<h1>Participants Page</h1>
-<p>Content coming soon.</p>
+
+<h1>Participants</h1>
+
+<div class="participants">
+
+    <script>
+        const participants = [
+            {first: "Emily", last: "Armstrong", affiliation: "Oxford Brookes University", bio: "I'm a PhD student researching the structure and function of nicotinic acetylcholine receptors in insects under the supervision of Dr. Andrew K Jones and Professor Isabel Bermudez. My interests include neuropharmacology in bees, especially Apis mellifera, focusing on insecticide interactions and neurotransmitter function."},
+            {first: "Chris", last: "Bass", affiliation: "University of Exeter", bio: "Our group’s research exploits recent advances in transcriptomics, genomics, and functional approaches to understand adaptive evolution in insects, particularly how insects detoxify natural and synthetic xenobiotics encountered in the environment."},
+            {first: "Cristina", last: "Botias", affiliation: "University of Alcalá", bio: "Cristina Botías is a research fellow in Life Sciences, studying biodiversity, ecology, and conservation of pollinators, focusing on bee responses to environmental stressors such as pesticides and pathogens."},
+            {first: "Andrew", last: "Brown", affiliation: "University of Bern", bio: "I enjoy mathematical modeling, particularly predictive modeling pertaining to Apis mellifera and Bombus terrestris. I've been working in Ecotoxicology for the last year, using AI daily to help with data visualization."},
+            {first: "Shuxiang", last: "Cao", affiliation: "University of Oxford", bio: ""},
+            {first: "Henry", last: "Cerbone", affiliation: "University of Oxford", bio: "My research focuses on quantifying embodiment in living systems and using modern AI/ML methods in 3D reconstruction and forest biodiversity monitoring. I'm advised by Graham Taylor and Chris Thorogood, funded via a Rhodes Scholarship."},
+            {first: "Lina", last: "Herbertsson", affiliation: "Lund University", bio: "I'm broadly interested in biodiversity conservation, focusing on climate and land-use changes, insects, and vascular plants. My ecotoxicology experience includes field studies, systematic reviews, and behavioural studies on non-Apis bees."},
+            {first: "Andrew", last: "Jones", affiliation: "Oxford Brookes", bio: "I'm a lecturer at Oxford Brookes University, interested in the evolution and genomics of cys-loop ligand-gated ion channels in insects, molecular targets of insecticides like neonicotinoids."},
+            {first: "Mikael", last: "Mieskolainen", affiliation: "Imperial College", bio: "Schmidt AI Fellow at Imperial College London, interested in generative AI, Monte Carlo simulations, optimization, and high-dimensional inference for natural sciences."},
+            {first: "Nicolas", last: "Nagloo", affiliation: "Lund University", bio: "Neuroethologist interested in neural bases of behaviour in vertebrates and invertebrates, recently exploring how pesticide exposure alters insect behaviours crucial for pollination."},
+            {first: "Cait", last: "Newport", affiliation: "University of Oxford", bio: "Researching animal behaviour and cognitive mechanisms underpinning navigation, using computer vision and AI for 3D reconstructions of fish movements."},
+            {first: "Beth", last: "Nicholls", affiliation: "University of Sussex", bio: "Investigating how environmental stressors like pesticides, poor nutrition, and climate change affect bee physiology and behaviour, using neuroscience and respirometry."},
+            {first: "Rachel", last: "Parkinson", affiliation: "University of Oxford", bio: "Studying impacts of environmental stressors on insect brains and behaviour, focusing on sensory perception and AI methods to enhance sublethal toxicity testing."},
+            {first: "Elisa", last: "Rigosi", affiliation: "Lund University", bio: "Neurobiologist studying insect sensory systems and the sublethal effects of pesticides, integrating neurobiology, chemical ecology, and cognitive science."},
+            {first: "Fabio", last: "Sgolastra", affiliation: "University of Bologna", bio: "Associate Professor studying ecology and conservation of bees, assessing environmental stressors’ impacts on bee health using holistic methods."},
+            {first: "Harry", last: "Siviter", affiliation: "University of Bristol", bio: "Focused on pollinator behaviour, ecology, and conservation, particularly anthropogenic stressors' impacts and bee cognition."},
+            {first: "Dara", last: "Stanley", affiliation: "University College Dublin", bio: "Ecologist studying pollinator-plant interactions, conservation, and agricultural impacts, focusing on pesticide mitigation strategies."},
+            {first: "Heloise", last: "Stevance", affiliation: "University of Oxford", bio: "Astrophysicist developing image-processing and classifiers for sky surveys, exploring innovative LLM usage in research."},
+            {first: "Lars", last: "Straub", affiliation: "Bern University", bio: "Lecturer studying wild bee declines, agricultural pesticides' interactions, and male insect reproductive health."},
+            {first: "Edward", last: "Straw", affiliation: "", bio: "Researching bumblebee susceptibility to pesticides, with a focus on co-formulants and adjuvants impacts."},
+            {first: "Rafaela", last: "Tadei", affiliation: "University of Bologna", bio: "Evaluating pesticide effects on non-target organisms, particularly bees, aiming to improve ecological risk evaluation and conservation strategies."},
+            {first: "Kieran", last: "Walter", affiliation: "University of Oxford", bio: "Investigating sublethal effects of pesticides like neonicotinoids on bee behaviour and social interactions."}
+        ];
+
+        participants.forEach(participant => {
+            const div = document.createElement('div');
+            div.className = 'participant';
+            const img = document.createElement('img');
+            img.src = `images/${participant.last.toLowerCase()}.jpeg`;
+            img.onerror = () => img.src = `images/${participant.last.toLowerCase()}.png`;
+            img.alt = `${participant.first} ${participant.last}`;
+            const name = document.createElement('h3');
+            name.textContent = `${participant.first} ${participant.last}`;
+            const affiliation = document.createElement('h4');
+            affiliation.textContent = participant.affiliation;
+            const bio = document.createElement('p');
+            bio.textContent = participant.bio;
+            div.appendChild(img);
+            div.appendChild(name);
+            div.appendChild(affiliation);
+            div.appendChild(bio);
+            document.querySelector('.participants').appendChild(div);
+        });
+    </script>
+
+</div>
+
 </body>
 </html>
