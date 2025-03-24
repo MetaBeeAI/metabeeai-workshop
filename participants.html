@@ -36,62 +36,96 @@
             font-style: italic;
             color: #555;
         }
+        
+        /* Responsive adjustments for participant cards */
+        @media screen and (max-width: 768px) {
+            .participant {
+                width: calc(50% - 20px);
+            }
+        }
+        
+        @media screen and (max-width: 480px) {
+            .participant {
+                width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
 
-<h1>Participants</h1>
+<header>
+    <img src="images/MetaBeeAI_logo.png" alt="MetaBeeAI Logo" class="logo">
+    <nav>
+        <div class="hamburger-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="agenda.html">Agenda</a></li>
+            <li><a href="speakers.html">Speakers</a></li>
+            <li><a href="participants.html">Participants</a></li>
+            <li><a href="workshop.html">Workshop</a></li>
+            <li><a href="funding.html">Funding</a></li>
+        </ul>
+    </nav>
+</header>
 
-<div class="participants">
+<main>
+    <h1>Participants</h1>
 
-    <script>
-        const participants = [
-            {first: "Emily", last: "Armstrong", affiliation: "Oxford Brookes University", bio: "I'm a PhD student researching the structure and function of nicotinic acetylcholine receptors in insects under the supervision of Dr. Andrew K Jones and Professor Isabel Bermudez. My interests include neuropharmacology in bees, especially Apis mellifera, focusing on insecticide interactions and neurotransmitter function."},
-            {first: "Chris", last: "Bass", affiliation: "University of Exeter", bio: "Our group’s research exploits recent advances in transcriptomics, genomics, and functional approaches to understand adaptive evolution in insects, particularly how insects detoxify natural and synthetic xenobiotics encountered in the environment."},
-            {first: "Cristina", last: "Botias", affiliation: "University of Alcalá", bio: "Cristina Botías is a research fellow in Life Sciences, studying biodiversity, ecology, and conservation of pollinators, focusing on bee responses to environmental stressors such as pesticides and pathogens."},
-            {first: "Andrew", last: "Brown", affiliation: "University of Bern", bio: "I enjoy mathematical modeling, particularly predictive modeling pertaining to Apis mellifera and Bombus terrestris. I've been working in Ecotoxicology for the last year, using AI daily to help with data visualization."},
-            {first: "Shuxiang", last: "Cao", affiliation: "University of Oxford", bio: ""},
-            {first: "Henry", last: "Cerbone", affiliation: "University of Oxford", bio: "My research focuses on quantifying embodiment in living systems and using modern AI/ML methods in 3D reconstruction and forest biodiversity monitoring. I'm advised by Graham Taylor and Chris Thorogood, funded via a Rhodes Scholarship."},
-            {first: "Lina", last: "Herbertsson", affiliation: "Lund University", bio: "I'm broadly interested in biodiversity conservation, focusing on climate and land-use changes, insects, and vascular plants. My ecotoxicology experience includes field studies, systematic reviews, and behavioural studies on non-Apis bees."},
-            {first: "Andrew", last: "Jones", affiliation: "Oxford Brookes", bio: "I'm a lecturer at Oxford Brookes University, interested in the evolution and genomics of cys-loop ligand-gated ion channels in insects, molecular targets of insecticides like neonicotinoids."},
-            {first: "Mikael", last: "Mieskolainen", affiliation: "Imperial College", bio: "Schmidt AI Fellow at Imperial College London, interested in generative AI, Monte Carlo simulations, optimization, and high-dimensional inference for natural sciences."},
-            {first: "Nicolas", last: "Nagloo", affiliation: "Lund University", bio: "Neuroethologist interested in neural bases of behaviour in vertebrates and invertebrates, recently exploring how pesticide exposure alters insect behaviours crucial for pollination."},
-            {first: "Cait", last: "Newport", affiliation: "University of Oxford", bio: "Researching animal behaviour and cognitive mechanisms underpinning navigation, using computer vision and AI for 3D reconstructions of fish movements."},
-            {first: "Beth", last: "Nicholls", affiliation: "University of Sussex", bio: "Investigating how environmental stressors like pesticides, poor nutrition, and climate change affect bee physiology and behaviour, using neuroscience and respirometry."},
-            {first: "Rachel", last: "Parkinson", affiliation: "University of Oxford", bio: "Studying impacts of environmental stressors on insect brains and behaviour, focusing on sensory perception and AI methods to enhance sublethal toxicity testing."},
-            {first: "Elisa", last: "Rigosi", affiliation: "Lund University", bio: "Neurobiologist studying insect sensory systems and the sublethal effects of pesticides, integrating neurobiology, chemical ecology, and cognitive science."},
-            {first: "Fabio", last: "Sgolastra", affiliation: "University of Bologna", bio: "Associate Professor studying ecology and conservation of bees, assessing environmental stressors’ impacts on bee health using holistic methods."},
-            {first: "Harry", last: "Siviter", affiliation: "University of Bristol", bio: "Focused on pollinator behaviour, ecology, and conservation, particularly anthropogenic stressors' impacts and bee cognition."},
-            {first: "Dara", last: "Stanley", affiliation: "University College Dublin", bio: "Ecologist studying pollinator-plant interactions, conservation, and agricultural impacts, focusing on pesticide mitigation strategies."},
-            {first: "Heloise", last: "Stevance", affiliation: "University of Oxford", bio: "Astrophysicist developing image-processing and classifiers for sky surveys, exploring innovative LLM usage in research."},
-            {first: "Lars", last: "Straub", affiliation: "Bern University", bio: "Lecturer studying wild bee declines, agricultural pesticides' interactions, and male insect reproductive health."},
-            {first: "Edward", last: "Straw", affiliation: "", bio: "Researching bumblebee susceptibility to pesticides, with a focus on co-formulants and adjuvants impacts."},
-            {first: "Rafaela", last: "Tadei", affiliation: "University of Bologna", bio: "Evaluating pesticide effects on non-target organisms, particularly bees, aiming to improve ecological risk evaluation and conservation strategies."},
-            {first: "Kieran", last: "Walter", affiliation: "University of Oxford", bio: "Investigating sublethal effects of pesticides like neonicotinoids on bee behaviour and social interactions."}
-        ];
+    <div class="participants">
+        <script>
+            const participants = [
+                {first: "Emily", last: "Armstrong", affiliation: "Oxford Brookes University", bio: "I'm a PhD student researching the structure and function of nicotinic acetylcholine receptors in insects under the supervision of Dr. Andrew K Jones and Professor Isabel Bermudez. My interests include neuropharmacology in bees, especially Apis mellifera, focusing on insecticide interactions and neurotransmitter function."},
+                {first: "Chris", last: "Bass", affiliation: "University of Exeter", bio: "Our group's research exploits recent advances in transcriptomics, genomics and post-genomic functional approaches to understand adaptive evolution in insects. A significant focus of our work is understanding how insects detoxify the natural and synthetic xenobiotics they encounter in the environment. This includes both plant secondary metabolites and man-made insecticides."}
+                {first: "Cristina", last: "Botias", affiliation: "University of Alcala", bio: "Cristina Botías is a research fellow in the department of Life Sciences at the University of Alcalá (Spain). Her broad research interests span biodiversity, ecology and conservation of pollinators, with a focus on the responses of bees to environmental stressors such as pesticide or pathogen exposure."}
+                {first: "Andrew", last: "Brown", affiliation: "University of Bern", bio: "I enjoy mathematical modeling, and in particular, predictive modeling pertaining to Apis mellifera and Bombus terrestris.  I have been working in Ecotoxicology for the last year, and use AI on a daily basis to help with data visualization."},
+                {first: "Shuxiang", last: "Cao", affiliation: "University of Oxford", bio: ""},
+                {first: "Henry", last: "Cerbone", affiliation: "University of Oxford", bio: "My research is focused on quantifying embodiment in living systems. I also have a continued interest in using modern AI/ML methods in 3D reconstruction and monitoring of forest biodiversity. I am advised by Graham Taylor and Chris Thorogood and funded via a Rhodes Scholarship."},
+                {first: "Lina", last: "Herbertsson", affiliation: "Lund University", bio: "I am broadly interested in biodiversity conservation, and my research revolves around climate and land-use changes, insects and vascular plants. My experience in ecotoxicology includes field studies, systematic reviews, and behavioural studies, primarily focused on non-Apis bees. My goal is to promote policy makers and other stakeholders with robust scientific evidence to facilitate evidence-based conservation."},
+                {first: "Andrew", last: "Jones", affiliation: "Oxford Brookes", bio: "I am a lecturer at Oxford Brookes University. I am interested in the evolution and functional genomics of cys-loop ligand-gated ion channels in insect species, which are molecular targets of insecticides such as neonicotinoids. I study how species-specific differences in these ion channels can affect sensitivity to insecticides."},
+                {first: "Mikael", last: "Mieskolainen", affiliation: "Imperial College", bio: "Schmidt AI in Science Fellow at Imperial College London. Research interests in generative AI (diffusion and flows, LLMs) for natural sciences, Monte Carlo simulation based modelling, optimization and high-dimensional simulation-based inference."},
+                {first: "Nicolas", last: "Nagloo", affiliation: "Lund University", bio: "I am a neuroethologist by training and am interested in the neural basis of behaviour in both vertebrates and invertebrates. I have only recently become involved in ecotoxicological studies that investigate how pesticide exposure can alter insect behaviour. This is particularly interesting when it affects pollinators which have to accomplish a complex set of behaviours to successfully pollinate a flower."},
+                {first: "Cait", last: "Newport", affiliation: "University of Oxford", bio: "My research is in animal behaviour and focuses on the cognitive abilities of fish and the mechanisms that underpin navigational. I use computer vision and AI techniques to reconstruct the 3D movements of fish in the wild from video recordings."},
+                {first: "Beth", last: "Nicholls", affiliation: "University of Sussex", bio: "I am interested in how environmental stressors such as pesticide exposure, poor nutrition and climate change interact to affect social and solitary bee physiology and behaviour. I use approaches from neuroscience to study bees sensory responses to floral rewards and combine respirometry with automated behaviour tracking to study the effects of larval exposure to stressors on metabolism."},
+                {first: "Rachel", last: "Parkinson", affiliation: "University of Oxford", bio: "I am interested in the impacts of environmental stressors on insect brains and behaviour, especially in terms of sensory perception. I am using AI methods to improve the resolution of sublethal toxicity testing, and I am keen to develop methodologies for incorporating sublethal testing in environmental risk assessment."},
+                {first: "Jonathan", last: "Pattrick", affiliation: "University of Oxford", bio: ""},
+                {first: "Elisa", last: "Rigosi", affiliation: "Lund University", bio: "I am a neurobiologist and neuroethologist studying how insect sensory systems function, particularly in non-model pollinators like hoverflies. My research focuses on the sublethal effects of pesticides on insect brains and behavior, combining neurobiology, chemical ecology, and cognitive science. With a background in visual and olfactory processing, I have worked in multiple interdisciplinary teams across Italy, Sweden, and Australia, using advanced neurophysiological techniques."},
+                {first: "Fabio", last: "Sgolastra", affiliation: "University of Bologna", bio: "I am an Associate Professor in General and Applied Entomology at the University of Bologna. I would define myself as a “bee ecologist”. Since 2002, my research activity focuses on ecology and conservation of bees in the agroecosystems and the valorisation of the pollination service. In particular, I study the impacts of the environmental stressors (mainly pesticides) on bee health following a holistic approach. This approach, which includes the assessment of potential synergistic effects among different stressors in laboratory and the analysis of data gathered from field monitoring studies, aims to improve the current environmental risk assessment and pollinator health."},
+                {first: "Harry", last: "Siviter", affiliation: "University of Bristol", bio: "I'm interested in the behaviour, ecology and conservation of pollinators. Much of my research has focused on the impact of anthropogenic stressors (pesticides, habitat loss, etc) on bumblebee and solitary bee health. I am also interested in animal cognition and specifically about how bees learn and respond to an ever changing environment."},
+                {first: "Dara", last: "Stanley", affiliation: "University College Dublin", bio: "I'm an ecologist interested in the interactions between pollinators and plants, from basic ecology through to conservation, management and interactions with agriculture. Some of my work has focussed on the impacts of pesticides (insecticides, fungicides and herbicides) on bee behaviour, reproduction and delivery of pollination services to crops. Increasingly, I'm interested in mitigation measures that can limit impacts of pesticides on pollinators."},
+                {first: "Heloise", last: "Stevance", affiliation: "University of Oxford", bio: "I am an astrophysicist working for sky surveys, looking for rare explosions in a big sky of billions of sources. I work mainly with image processing and feature based classifiers to design Virtual Research Assistants. Also keen on innovative ways to use LLMs to better search the literature and our own manuals because we write so much software."},
+                {first: "Lars", last: "Straub", affiliation: "Bern University", bio: "Since October 2021, I hold the position as the Vinetum Foundation lecturer in wild bee health at the University of Bern. My research aims to understand the mechanisms underlying wild bee declines and how environmental stressors affect wild bee health. Key interests are studying the interactions among agricultural pesticides and relevant pathogens as well as focusing on male insect reproductive health."},
+                {first: "Edward", last: "Straw", affiliation: "", bio: "Working on questions of bumblebee susceptibility to pesticides, comparing wild and reared bees. Special interest in co-formulants and adjuvants, and the emerging understanding of their impacts on wildlife."},
+                {first: "Rafaela", last: "Tadei", affiliation: "University of Bologna", bio: "I am a biologist evaluating the effects of pesticides on non-target organisms, particularly bees. By integrating lethal and sublethal endpoints, my research aims to improve ecological risk evaluation and enhance conservation strategies."},
+                {first: "Kieran", last: "Walter", affiliation: "University of Oxford", bio: "I am interested in the effects of  neonicotinoid pesticides, and others that share their mode of action, at sublethal, field-realistic concentrations. I explore behavioural impacts of pesticide exposure in bumblebees; if outright toxicity correlates with the severity of these impacts and whether social interaction mitigates these effects."}
+            ];
 
-        participants.forEach(participant => {
-            const div = document.createElement('div');
-            div.className = 'participant';
-            const img = document.createElement('img');
-            img.src = `images/${participant.last.toLowerCase()}.jpeg`;
-            img.onerror = () => img.src = `images/${participant.last.toLowerCase()}.png`;
-            img.alt = `${participant.first} ${participant.last}`;
-            const name = document.createElement('h3');
-            name.textContent = `${participant.first} ${participant.last}`;
-            const affiliation = document.createElement('h4');
-            affiliation.textContent = participant.affiliation;
-            const bio = document.createElement('p');
-            bio.textContent = participant.bio;
-            div.appendChild(img);
-            div.appendChild(name);
-            div.appendChild(affiliation);
-            div.appendChild(bio);
-            document.querySelector('.participants').appendChild(div);
-        });
-    </script>
+            participants.forEach(participant => {
+                const div = document.createElement('div');
+                div.className = 'participant';
+                const img = document.createElement('img');
+                img.src = `images/${participant.last.toLowerCase()}.jpeg`;
+                img.onerror = () => img.src = `images/${participant.last.toLowerCase()}.png`;
+                img.alt = `${participant.first} ${participant.last}`;
+                const name = document.createElement('h3');
+                name.textContent = `${participant.first} ${participant.last}`;
+                const affiliation = document.createElement('h4');
+                affiliation.textContent = participant.affiliation;
+                const bio = document.createElement('p');
+                bio.textContent = participant.bio;
+                div.appendChild(img);
+                div.appendChild(name);
+                div.appendChild(affiliation);
+                div.appendChild(bio);
+                document.querySelector('.participants').appendChild(div);
+            });
+        </script>
+    </div>
+</main>
 
-</div>
-
+<script src="js/script.js"></script>
 </body>
 </html>

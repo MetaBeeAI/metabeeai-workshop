@@ -1,2 +1,145 @@
-body {font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; max-width: 960px; margin: auto;}
-h1 {color: #5a4a9f;}
+/* Base styles */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    padding: 20px;
+    background-color: #5a4a9f;
+    position: relative;
+}
+
+.logo {
+    width: 200px;
+    margin-bottom: 20px;
+}
+
+/* Navigation styles */
+nav {
+    position: relative;
+}
+
+nav ul.nav-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul.nav-menu li {
+    display: inline;
+}
+
+nav ul.nav-menu li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: all 0.3s ease;
+}
+
+nav ul.nav-menu li a:hover {
+    color: #f5f5f5;
+    text-decoration: underline;
+}
+
+/* Main content styles */
+main {
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #5a4a9f;
+}
+
+p {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Hamburger menu */
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    z-index: 100;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    /* Display hamburger menu on mobile */
+    .hamburger-menu {
+        display: block;
+    }
+    
+    /* Hide navigation menu by default on mobile */
+    nav ul.nav-menu {
+        position: absolute;
+        flex-direction: column;
+        background-color: #5a4a9f;
+        width: 100%;
+        left: 0;
+        top: 100%;
+        gap: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease;
+        z-index: 99;
+    }
+    
+    /* Show menu when active class is added via JavaScript */
+    nav ul.nav-menu.active {
+        max-height: 300px;
+    }
+    
+    nav ul.nav-menu li {
+        text-align: center;
+        padding: 10px;
+    }
+    
+    /* Adjust logo size for mobile */
+    .logo {
+        width: 150px;
+    }
+    
+    /* Adjust main content padding for mobile */
+    main {
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    /* Further adjustments for very small screens */
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    .logo {
+        width: 120px;
+    }
+    
+    main {
+        padding: 15px;
+    }
+}
