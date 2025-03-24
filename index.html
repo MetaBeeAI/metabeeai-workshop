@@ -5,6 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MetaBeeAI Workshop | Home</title>
     <link href="css/styles.css" rel="stylesheet">
+    <style>
+        .home-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .content-section {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .content-section h1, .content-section h2 {
+            color: #5a4a9f;
+            margin-top: 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(90, 74, 159, 0.2);
+        }
+        
+        .content-section h3 {
+            color: #333;
+            margin-top: 25px;
+        }
+        
+        .content-section p {
+            line-height: 1.8;
+            color: #444;
+        }
+        
+        .organizers-list {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+        
+        .organizers-list li {
+            margin-bottom: 12px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .organizers-list li:before {
+            content: "•";
+            color: #5a4a9f;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        @media screen and (max-width: 768px) {
+            .content-section {
+                padding: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -21,15 +79,30 @@
             <li><a href="agenda.html">Agenda</a></li>
             <li><a href="speakers.html">Speakers</a></li>
             <li><a href="participants.html">Participants</a></li>
-            <li><a href="workshop.html">Workshop</a></li>
+            <li><a href="metabeeai.html">MetaBeeAI</a></li>
             <li><a href="funding.html">Funding</a></li>
         </ul>
     </nav>
 </header>
 
 <main>
-    <h1>Welcome to the MetaBeeAI Workshop</h1>
-    <p>The MetaBeeAI workshop is dedicated to advancing research through artificial intelligence, focusing on the interactions between bees and pesticides. Join us in collaborative discussions and groundbreaking explorations into pollinator conservation and AI-driven methodologies.</p>
+    <div class="home-container">
+        <div class="content-section">
+            <h1>MetaBeeAI Project</h1>
+            <p>MetaBeeAI is an international consortium of bee ecotoxicologists and AI experts developing a pipeline that leverages large language models for automated systematic review and meta-analysis of research on bees and pesticides. Our approach synthesizes the vast and heterogeneous body of published literature, encompassing studies on multiple bee species, pesticide types, experimental methodologies, and a wide range of toxicological endpoints. A key objective is to understand how sublethal effects, measured at different levels of biological organization, interact to impact overall fitness and how these effects relate to the lethal endpoint values used in environmental risk assessment. Designed for broader applicability, our pipeline can be adapted across the life sciences to integrate complex datasets and improve understanding of the impacts of environmental change.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>Workshop Purpose</h2>
+            <p>The MetaBeeAI Workshop brings together leading researchers in bee ecotoxicology and artificial intelligence to advance our objectives through collaborative discussions, knowledge exchange, and hands-on activities. The workshop aims to refine methodologies for systematic review and meta-analysis using large language models, explore the implications of sublethal effects on bees, and set a roadmap for future research and applications. Participants will engage in breakout sessions, invited talks, and networking opportunities to foster interdisciplinary collaboration and innovation.</p>
+
+            <h3>Organisers</h3>
+            <ul class="organizers-list">
+                <li><strong>Lead Organiser:</strong> Rachel Parkinson</li>
+                <li><strong>Co-organisers:</strong> Cait Newport, Heloise Stevance</li>
+            </ul>
+        </div>
+    </div>
 </main>
 
 <script src="js/script.js"></script>
