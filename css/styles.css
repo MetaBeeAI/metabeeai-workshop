@@ -68,29 +68,42 @@ p {
     margin: 0 auto;
 }
 
-/* Hamburger menu */
+/* Hamburger menu improvements */
 .hamburger-menu {
     display: none;
     cursor: pointer;
-    position: absolute;
-    right: 20px;
-    top: 10px;
-    z-index: 100;
+    align-items: center;
+    background-color: rgba(90, 74, 159, 0.1);
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid rgba(90, 74, 159, 0.3);
 }
 
-.bar {
+.hamburger-menu .menu-text {
+    margin-right: 8px;
+    font-weight: bold;
+    color: #5a4a9f;
+    font-size: 0.9rem;
+}
+
+.hamburger-menu .bar {
     width: 25px;
     height: 3px;
-    background-color: white;
-    margin: 5px 0;
-    transition: 0.4s;
+    margin: 4px 0;
+    background-color: #5a4a9f;
+    display: block;
+    transition: 0.3s;
 }
 
 /* Responsive styles */
 @media screen and (max-width: 768px) {
     /* Display hamburger menu on mobile */
     .hamburger-menu {
-        display: block;
+        display: flex;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 1000;
     }
     
     /* Hide navigation menu by default on mobile */
