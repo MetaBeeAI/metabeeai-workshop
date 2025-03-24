@@ -75,16 +75,20 @@ p {
     display: none;
     cursor: pointer;
     align-items: center;
-    background-color: rgba(90, 74, 159, 0.1);
+    background-color: rgba(255, 255, 255, 0.15);
     padding: 8px 12px;
     border-radius: 6px;
-    border: 1px solid rgba(90, 74, 159, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
 }
 
 .hamburger-menu .menu-text {
     margin-right: 8px;
     font-weight: bold;
-    color: #5a4a9f;
+    color: white;
     font-size: 0.9rem;
 }
 
@@ -92,7 +96,7 @@ p {
     width: 25px;
     height: 3px;
     margin: 4px 0;
-    background-color: #5a4a9f;
+    background-color: white;
     display: block;
     transition: 0.3s;
 }
@@ -102,10 +106,6 @@ p {
     /* Display hamburger menu on mobile */
     .hamburger-menu {
         display: flex;
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        z-index: 1000;
     }
     
     /* Hide navigation menu by default on mobile */
