@@ -1,13 +1,230 @@
 <!DOCTYPE html>
-<html lang='en-GB'>
+<html lang="en-GB">
 <head>
-<title>Agenda | MetaBeeAI Workshop</title>
-<link rel='stylesheet' href='css/styles.css'>
-<meta charset='UTF-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda | MetaBeeAI Workshop</title>
+    <link href="css/styles.css" rel="stylesheet">
+    <style>
+        .agenda-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 40px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px 15px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #5a4a9f;
+            color: white;
+            font-weight: bold;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        tr:hover {
+            background-color: rgba(90, 74, 159, 0.1);
+        }
+
+        h2 {
+            color: #5a4a9f;
+            margin-top: 40px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #5a4a9f;
+        }
+
+        /* Responsive table adjustments */
+        @media (max-width: 768px) {
+            table {
+                font-size: 0.9rem;
+            }
+            
+            th, td {
+                padding: 8px 10px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            table, thead, tbody, th, td, tr {
+                display: block;
+            }
+            
+            thead tr {
+                position: absolute;
+                top: -9999px;
+                left: -9999px;
+            }
+
+            tr {
+                margin-bottom: 15px;
+                border: 1px solid #ddd;
+            }
+            
+            td {
+                border: none;
+                border-bottom: 1px solid #ddd;
+                position: relative;
+                padding-left: 50%;
+                text-align: right;
+            }
+
+            td:before {
+                position: absolute;
+                top: 12px;
+                left: 12px;
+                width: 45%;
+                padding-right: 10px;
+                white-space: nowrap;
+                content: attr(data-label);
+                font-weight: bold;
+                text-align: left;
+            }
+            
+            td:first-of-type:before {
+                content: "Time";
+            }
+            
+            td:last-of-type:before {
+                content: "Event";
+            }
+        }
+    </style>
 </head>
 <body>
-<h1>Agenda Page</h1>
-<p>Content coming soon.</p>
+
+<header>
+    <img src="images/MetaBeeAI_logo.png" alt="MetaBeeAI Logo" class="logo">
+    <nav>
+        <div class="hamburger-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="agenda.html">Agenda</a></li>
+            <li><a href="speakers.html">Speakers</a></li>
+            <li><a href="participants.html">Participants</a></li>
+            <li><a href="workshop.html">Workshop</a></li>
+            <li><a href="funding.html">Funding</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <div class="agenda-container">
+        <h1>MetaBeeAI Workshop Agenda</h1>
+
+        <h2>Tuesday, April 1</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Duration</th>
+                    <th>Event</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td data-label="Duration">14:00 - 17:00</td><td data-label="Event">Arrivals and Check-in (Trinity College)</td></tr>
+                <tr><td data-label="Duration">18:30 - 21:00</td><td data-label="Event">Welcome Reception (The Kings Arms Pub)</td></tr>
+            </tbody>
+        </table>
+
+        <h2>Wednesday, April 2</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Duration</th>
+                    <th>Event</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td data-label="Duration">8:00 - 9:00</td><td data-label="Event">Breakfast (Trinity College)</td></tr>
+                <tr><td data-label="Duration">9:30 - 10:00</td><td data-label="Event">Welcome and Intros</td></tr>
+                <tr><td data-label="Duration">10:00 - 10:30</td><td data-label="Event">MetaBeeAI Update</td></tr>
+                <tr><td data-label="Duration">10:30 - 10:45</td><td data-label="Event">Break (Tea and Coffee)</td></tr>
+                <tr><td data-label="Duration">10:45 - 11:15</td><td data-label="Event">SoTA in LLM-researchers</td></tr>
+                <tr><td data-label="Duration">11:15 - 12:00</td><td data-label="Event">Workshop Goals and Introduction to Breakouts</td></tr>
+                <tr><td data-label="Duration">12:00 - 12:45</td><td data-label="Event">Lunch Onsite (Occasions)</td></tr>
+                <tr><td data-label="Duration">12:45 - 15:00</td><td data-label="Event">BREAKOUT SESSION 1</td></tr>
+                <tr><td data-label="Duration">15:00 - 15:30</td><td data-label="Event">Break (Tea and Coffee)</td></tr>
+                <tr><td data-label="Duration">15:30 - 16:30</td><td data-label="Event">Invited Talk: Steve Roberts – Oxford University</td></tr>
+                <tr><td data-label="Duration">16:30 - 17:30</td><td data-label="Event">Dinner (Lamb & Flag Pub)</td></tr>
+                <tr><td data-label="Duration">17:30 - 19:15</td><td data-label="Event">"Uncomfortable Oxford" Walking Tour</td></tr>
+            </tbody>
+        </table>
+
+        <h2>Thursday, April 3</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Duration</th>
+                    <th>Event</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td data-label="Duration">8:00 - 9:00</td><td data-label="Event">Breakfast (Trinity College)</td></tr>
+                <tr><td data-label="Duration">9:30 - 12:00</td><td data-label="Event">LLM Workshop: Ryan Daniels – Cambridge University (Break at 10:30)</td></tr>
+                <tr><td data-label="Duration">12:00 - 12:45</td><td data-label="Event">Lunch Onsite (Taylors)</td></tr>
+                <tr><td data-label="Duration">12:45 - 15:00</td><td data-label="Event">BREAKOUT SESSION 2</td></tr>
+                <tr><td data-label="Duration">15:00 - 15:30</td><td data-label="Event">Break (Tea and Coffee)</td></tr>
+                <tr><td data-label="Duration">15:30 - 16:15</td><td data-label="Event">Invited Talk: Amy Hinsley – Oxford University</td></tr>
+                <tr><td data-label="Duration">16:15 - 17:00</td><td data-label="Event">Invited Talk: Carmen Elphick – HSE CRD</td></tr>
+                <tr><td data-label="Duration">17:00 - 18:15</td><td data-label="Event">Break</td></tr>
+                <tr><td data-label="Duration">18:15 - 19:00</td><td data-label="Event">Drinks Reception (Trinity College Upper Senior Common Room)</td></tr>
+                <tr><td data-label="Duration">19:00 - 21:00</td><td data-label="Event">Dinner (Trinity College Old Bursary Room)</td></tr>
+            </tbody>
+        </table>
+
+        <h2>Friday, April 4</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Duration</th>
+                    <th>Event</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td data-label="Duration">8:00 - 9:00</td><td data-label="Event">Breakfast (Trinity College)</td></tr>
+                <tr><td data-label="Duration">10:00 - 10:45</td><td data-label="Event">Invited Talk: Andy French – AIBIO-UK</td></tr>
+                <tr><td data-label="Duration">10:45 - 11:00</td><td data-label="Event">Break (Tea and Coffee)</td></tr>
+                <tr><td data-label="Duration">11:00 - 11:45</td><td data-label="Event">PollinERA x MetaBeeAI</td></tr>
+                <tr><td data-label="Duration">11:45 - 12:00</td><td data-label="Event">Walk to Browns for Lunch</td></tr>
+                <tr><td data-label="Duration">12:00 - 13:30</td><td data-label="Event">Lunch (Browns)</td></tr>
+                <tr><td data-label="Duration">13:30 - 15:30</td><td data-label="Event">BREAKOUT SESSION 3</td></tr>
+                <tr><td data-label="Duration">15:30 - 15:45</td><td data-label="Event">Closing Remarks and Next Steps</td></tr>
+                <tr><td data-label="Duration">15:45 - 17:00</td><td data-label="Event">Visit to Natural History Museum</td></tr>
+            </tbody>
+        </table>
+
+        <h2>Saturday, April 5</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Duration</th>
+                    <th>Event</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td data-label="Duration">8:00 - 9:00</td><td data-label="Event">Breakfast (Trinity College)</td></tr>
+                <tr><td data-label="Duration">9:00 - 11:00</td><td data-label="Event">Check-out and Departures</td></tr>
+            </tbody>
+        </table>
+    </div>
+</main>
+
+<script src="js/script.js"></script>
 </body>
 </html>
