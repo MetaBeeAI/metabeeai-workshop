@@ -101,6 +101,49 @@
                 content: "Event";
             }
         }
+
+        /* Download button styles */
+        .download-section {
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        .download-button {
+            display: inline-flex;
+            align-items: center;
+            background-color: #5a4a9f;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(90, 74, 159, 0.2);
+        }
+        
+        .download-button:hover {
+            background-color: #4a3a8f;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(90, 74, 159, 0.3);
+        }
+        
+        .download-icon {
+            margin-right: 10px;
+        }
+        
+        .download-note {
+            margin-top: 8px;
+            color: #666;
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+        
+        @media (max-width: 480px) {
+            .download-button {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -127,6 +170,17 @@
 <main>
     <div class="agenda-container">
         <h1>MetaBeeAI Workshop Agenda</h1>
+
+        <div class="download-section">
+            <a href="docs/MetaBeeAI_programme_book.pdf" class="download-button" download>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" class="download-icon">
+                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                </svg>
+                Download Programme Booklet (PDF)
+            </a>
+            <p class="download-note">Get the complete programme details in a printable format</p>
+        </div>
 
         <h2>Tuesday, April 1</h2>
         <table>
