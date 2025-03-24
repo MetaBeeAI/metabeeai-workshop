@@ -1,13 +1,247 @@
 <!DOCTYPE html>
-<html lang='en-GB'>
+<html lang="en-GB">
 <head>
-<title>Speakers | MetaBeeAI Workshop</title>
-<link rel='stylesheet' href='css/styles.css'>
-<meta charset='UTF-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speakers | MetaBeeAI Workshop</title>
+    <link href="css/styles.css" rel="stylesheet">
+    <style>
+        .speakers-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .speakers-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .speaker-card {
+            display: flex;
+            flex-direction: column;
+            background-color: #f8f8f8;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .speaker-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .speaker-image {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+        }
+        
+        .speaker-info {
+            padding: 25px;
+            text-align: left;
+        }
+        
+        .speaker-name {
+            font-size: 1.8rem;
+            color: #5a4a9f;
+            margin-bottom: 8px;
+        }
+        
+        .speaker-affiliation {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .speaker-title {
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .speaker-talk {
+            font-size: 1.2rem;
+            color: #5a4a9f;
+            font-weight: bold;
+            margin: 15px 0;
+            padding: 10px;
+            border-left: 4px solid #5a4a9f;
+            background-color: rgba(90, 74, 159, 0.1);
+        }
+        
+        .speaker-bio {
+            line-height: 1.6;
+        }
+        
+        /* Responsive adjustments */
+        @media screen and (max-width: 900px) {
+            .speakers-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .speaker-image {
+                height: 300px;
+            }
+        }
+        
+        @media screen and (max-width: 480px) {
+            .speaker-image {
+                height: 250px;
+            }
+            
+            .speaker-info {
+                padding: 15px;
+            }
+            
+            .speaker-name {
+                font-size: 1.5rem;
+            }
+            
+            .speaker-talk {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
 </head>
 <body>
-<h1>Speakers Page</h1>
-<p>Content coming soon.</p>
+
+<header>
+    <img src="images/MetaBeeAI_logo.png" alt="MetaBeeAI Logo" class="logo">
+    <nav>
+        <div class="hamburger-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="agenda.html">Agenda</a></li>
+            <li><a href="speakers.html">Speakers</a></li>
+            <li><a href="participants.html">Participants</a></li>
+            <li><a href="workshop.html">Workshop</a></li>
+            <li><a href="funding.html">Funding</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <div class="speakers-container">
+        <h1>Invited Speakers</h1>
+        <p>We are honored to present our distinguished speakers who will share their expertise and insights during the MetaBeeAI Workshop.</p>
+
+        <div class="speakers-grid" id="speakers-grid">
+            <!-- Speakers will be dynamically added here -->
+        </div>
+    </div>
+</main>
+
+<script>
+    // Speaker data - you can add your specific descriptions here
+    const speakers = [
+        {
+            name: "Stephen Roberts",
+            lastName: "roberts",
+            affiliation: "University of Oxford",
+            title: "Professor of Machine Learning",
+            bio: "Stephen's main area of research lies in the theory and application of machine learning for data analysis, especially sequential data and dynamical systems. He has particular interest in the development of machine learning theory to help create robust, reliable and uncertainty-aware solutions for real-world applications. Current research develops theory and methodology for application across diverse problem domains including astrophysics, environment and ecology, finance and data-centric engineering. He leads the Machine Learning Research Group, is a Professorial Fellow of Somerville College, founding Director of the EPSRC Centre for Doctoral Training in Autonomous, Intelligent Machines and Systems (AIMS), Director of the Oxford ELLIS unit and was Director of the Oxford-Man Institute from 2015-2021. Stephen is Co-Founder and Scientific Advisor of Mind Foundry, PI of Oxford's Schmidt AI in Science Postdoctoral Fellowship programme and co-I of the Intelligent Earth Centre for Doctoral Training.",
+            talk: "21st Century Biology: the age of intelligent algorithms?"
+        },
+        {
+            name: "Amy Hinsley",
+            lastName: "hinsley",
+            affiliation: "University of Oxford",
+            title: "Schmidt AI in Science Fellow, Director of the Oxford Martin Programme on Wildlife Trade",
+            bio: "I am an interdisciplinary conservation scientist using social sciences and machine learning methods to understand complex threats to wild species. I focus on the wildlife trade, with the aim of understanding how different factors and drivers interact to increase or decrease trade. My current research focuses on developing nowcasting models to provide near term predictions for wildlife trade trends to improvise evidence for policy makers.",
+            talk: "Stakeholder engagement and social science for research and impact"
+        },
+        {
+            name: "Carmen Elphick",
+            lastName: "elphick",
+            affiliation: "Health & Safety Executive, Chemicals Regulation Division",
+            title: "Senior Regulatory Scientist, Ecotoxicology",
+            bio: "I studied environmental biology and plant biology at University of Wales (BSc and MRes) and a DPhil at University of York investigating salt tolerance in plants. Following this I worked for 10 years as a reporting officer with the Forensic Science Service.  I Joined the Chemicals Regulation Division (CRD), HSE in 2013 and have worked in the ecotoxicology team since then – working on pesticide and biocide active substance and product registrations. Attended some EFSA peer review meetings pre EU-exit.  Work on all ecotoxicology areas of risk assessment and have an interest in bees.  Have attended the last two ICPPR (International Commission for Plant Pollinator Relationships) – bee protection group conferences.",
+            talk: "Bee and non-target arthropod risk assessment in GB"
+        },
+        {
+            name: "Andrew French",
+            lastName: "french",
+            affiliation: "University of Nottingham",
+            title: "Director of AIBIO-UK",
+            bio: "Andrew leads the AI in Biosciences BBSRC community building project. The AIBIO vision is to bring together AI and core bioscience researchers to unravel biological fundamentals and tackle impeding societal challenges. To do this, we run events, and fund activities and pilot projects, to bring new members of the community together. In this talk we will look at some relevant applications of AI in the Biosciences, and consider the state of AI capabilities at the current time, in particular computer vision and large language models. An introduction to AIBIO-UK will be included; AIBIO-UK is a BBSRC community building network to bring together the AI and biosciences communities.",
+            talk: "An introduction to AI in Biosciences"
+        }
+    ];
+
+    // Function to populate speakers
+    function populateSpeakers() {
+        const speakersGrid = document.getElementById('speakers-grid');
+        
+        speakers.forEach(speaker => {
+            // Create speaker card
+            const speakerCard = document.createElement('div');
+            speakerCard.className = 'speaker-card';
+            
+            // Create and set speaker image
+            const img = document.createElement('img');
+            img.className = 'speaker-image';
+            img.src = `images/${speaker.lastName.toLowerCase()}.jpeg`;
+            img.onerror = () => img.src = `images/${speaker.lastName.toLowerCase()}.png`;
+            img.alt = speaker.name;
+            
+            // Create info container
+            const infoDiv = document.createElement('div');
+            infoDiv.className = 'speaker-info';
+            
+            // Create and set speaker name
+            const nameHeading = document.createElement('h2');
+            nameHeading.className = 'speaker-name';
+            nameHeading.textContent = speaker.name;
+            
+            // Create and set affiliation
+            const affiliation = document.createElement('div');
+            affiliation.className = 'speaker-affiliation';
+            affiliation.textContent = speaker.affiliation;
+            
+            // Create and set title
+            const title = document.createElement('div');
+            title.className = 'speaker-title';
+            title.textContent = speaker.title;
+            
+            // Create and set talk title
+            const talk = document.createElement('div');
+            talk.className = 'speaker-talk';
+            talk.textContent = `Talk: ${speaker.talk}`;
+            
+            // Create and set bio
+            const bio = document.createElement('p');
+            bio.className = 'speaker-bio';
+            bio.textContent = speaker.bio;
+            
+            // Assemble the card
+            infoDiv.appendChild(nameHeading);
+            infoDiv.appendChild(affiliation);
+            infoDiv.appendChild(title);
+            infoDiv.appendChild(talk);
+            infoDiv.appendChild(bio);
+            
+            speakerCard.appendChild(img);
+            speakerCard.appendChild(infoDiv);
+            
+            // Add to grid
+            speakersGrid.appendChild(speakerCard);
+        });
+    }
+
+    // Initialize when DOM is loaded
+    document.addEventListener('DOMContentLoaded', populateSpeakers);
+</script>
+
+<script src="js/script.js"></script>
 </body>
 </html>
